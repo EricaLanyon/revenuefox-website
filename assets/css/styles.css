@@ -983,6 +983,33 @@ p:last-child { margin-bottom: 0; }
 }
 .contact-info-block a:hover { color: var(--fox-rust); }
 
+/* Two-box contact layout on dark background */
+.contact-boxes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  max-width: 680px;
+  margin-inline: auto;
+  margin-bottom: 36px;
+}
+.contact-boxes-note {
+  max-width: 580px;
+  margin-inline: auto;
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.75;
+  text-align: center;
+}
+.bg-midnight .contact-info-block {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  text-align: left;
+}
+.bg-midnight .contact-info-block h3 { color: #ffffff; }
+.bg-midnight .contact-info-block p  { color: rgba(255, 255, 255, 0.70); }
+.bg-midnight .contact-info-block a  { color: var(--warm-ivory); }
+.bg-midnight .contact-info-block a:hover { color: #ffffff; }
+
 .contact-reassurance {
   padding: 20px;
   border-left: 3px solid var(--bold-green);
@@ -1320,6 +1347,7 @@ p:last-child { margin-bottom: 0; }
   .process-steps::before{ display: none; }
   .proof-stats          { grid-template-columns: 1fr; }
   .fit-grid             { grid-template-columns: 1fr; }
+  .contact-boxes        { grid-template-columns: 1fr; }
   .contact-layout       { grid-template-columns: 1fr; }
   .contact-sidebar      { position: static; }
   .form-row             { grid-template-columns: 1fr; }
