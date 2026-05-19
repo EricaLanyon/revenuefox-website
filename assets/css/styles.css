@@ -1095,18 +1095,20 @@ p:last-child { margin-bottom: 0; }
 /* ============================================================
    19. SYMPTOM LIST (replaces problem card grid)
    ============================================================ */
-.symptom-list {
-  list-style: none;
-  border-top: 1px solid var(--pale-stone);
-  margin-top: 8px;
+.symptom-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  margin-bottom: 8px;
 }
-.symptom-list li {
+.symptom-card {
+  background: var(--porcelain);
+  border: 1px solid var(--pale-stone);
+  border-radius: var(--radius-md);
+  padding: 20px 24px;
   display: flex;
-  align-items: baseline;
-  gap: 28px;
-  padding: 20px 0;
-  border-bottom: 1px solid var(--pale-stone);
-  transition: background-color var(--ease);
+  align-items: flex-start;
+  gap: 16px;
 }
 .symptom-num {
   font-family: var(--font-heading);
@@ -1114,16 +1116,15 @@ p:last-child { margin-bottom: 0; }
   font-weight: 700;
   letter-spacing: 0.08em;
   color: var(--bold-green);
-  min-width: 26px;
   flex-shrink: 0;
   padding-top: 3px;
 }
 .symptom-text {
   font-family: var(--font-heading);
-  font-size: clamp(18px, 2.2vw, 24px);
+  font-size: 16px;
   font-weight: 600;
   color: var(--midnight-ink);
-  line-height: 1.25;
+  line-height: 1.35;
 }
 
 /* ============================================================
@@ -1338,8 +1339,8 @@ p:last-child { margin-bottom: 0; }
 
   .offering-grid        { grid-template-columns: 1fr; }
   .who-split            { grid-template-columns: 1fr; }
-  .symptom-list li      { gap: 16px; }
-  .symptom-text         { font-size: 17px; }
+  .symptom-grid         { grid-template-columns: 1fr; }
+  .symptom-text         { font-size: 15px; }
   .statement-section    { padding-block: 72px; }
   .problem-grid         { grid-template-columns: 1fr; gap: 14px; }
   .services-preview-grid{ grid-template-columns: 1fr; }
