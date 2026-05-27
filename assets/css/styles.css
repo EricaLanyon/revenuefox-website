@@ -1041,7 +1041,7 @@ p:last-child { margin-bottom: 0; }
 /* Light-background hero variant (used on homepage) */
 .hero-light {
   background-color: #0d1e2e; /* fallback while image loads */
-  background-image: url('../../images/hero-fox.jpg');
+  background-image: url('/images/hero-fox.jpg');
   background-size: cover;
   background-position: center 38%;
 }
