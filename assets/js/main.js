@@ -238,3 +238,32 @@
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
   }
 }());
+
+
+/* ============================================================
+   5. SCROLL REVEAL
+   ============================================================ */
+(function initScrollReveal() {
+  if (!window.IntersectionObserver) return;
+  var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var targets = document.querySelectorAll('main > section');
+  if (prefersReduced) { targets.forEach(function (s) { s.classList.add('reveal', 'is-in'); }); return; }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+  targets.forEach(function (s) { s.classList.add('reveal'); io.observe(s); });
+}());
+
+
+/* ============================================================
+   6. TRANSLUCENT HEADER ON SCROLL
+   ============================================================ */
+(function initHeaderScroll() {
+  var header = document.querySelector('.site-header');
+  if (!header) return;
+  function update() { header.classList.toggle('is-scrolled', window.scrollY > 12); }
+  update();
+  window.addEventListener('scroll', update, { passive: true });
+}());
